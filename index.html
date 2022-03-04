@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+<kafa>
+<title>Uygulama Modu Oluşturucu</title>
+<meta name="description" content="MOD EDİLMİŞ PC / TAM ANDROID UYGULAMALARI İÇİN WEB SİTEME HOŞ GELDİNİZ." />
+<meta name="robots" content="all,index,follow" /><meta name = "viewport" içerik = "ilk ölçek = 1.1, kullanıcı tarafından ölçeklenebilir = hayır"><meta karakter kümesi="UTF-8" />
+<link rel="manifest" href="https://www.socialcreator.com/appmodbuilder/manifest.json">
+<link rel="apple-touch-icon" href="https://www.socialcreator.com/srv/imgs/gen/54269_ico.png">
+<meta name="apple-mobile-web-app-capable" content="evet">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="AppModBuilder">
+<link rel="stylesheet" href="https://www.socialcreator.com/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Simgeler">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<stil>
+.w3-animate-opacity{-webkit-animation:opac 1s;animation:opac 1s}
+@-webkit-anahtar kareler opac{den{opacity:0}'e {opacity:1}}
+@keyframes opac{den{opacity:0}'e {opacity:1}}
+
+
+html{min-yükseklik:100%;}
+gövde
+{
+kenar boşluğu:0px;padding:0px;font-family:Roboto;background-color:#212121; arka plan resmi: url("https://www.socialcreator.com/srv/imgs/gen/54269_fondo.png");
+	arka plan boyutu:kapak;arka plan konumu:merkez;arka plan-tekrar:tekrar yok;}
+
+h1.cab{sol kenar:10px;color:#F5F5F5;}
+h3.cab{sol kenar:10px;color:#E0E0E0;}
+.txtgen{font-size:18px;}
+.txtgen2{yazı tipi boyutu:16px;}
+@media all ve (maksimum genişlik: 460 piksel)
+{
+	h1.cab{yazı tipi boyutu:22px;}
+	h3.cab{font-size:16px;}
+	.txtgen{yazı tipi boyutu:16px;}
+	.txtgen2{yazı tipi boyutu:16px;}
+}
+
+
+.topcmain{border:0px;transition:background-color 0,2s kolaylık;beyaz-boşluk:nowrap;imleç:işaretçi;}
+.topcmain:hover{arka plan rengi:#72a6db;}
+@media all ve (maksimum genişlik: 790 piksel)
+{
+	.topcmain:hover{arka plan rengi:#72acdb;}
+}
+
+sa{konum:devralma;yükseklik: 1px;kenarlık: 0;kenarlık-üst: 1px katı;kenar boşluğu: 1em 0;dolgu: 0;}
+
+.brillar{opacity: 0.7;geçiş:opacity 0.2s kolaylık;}
+.brillar:hover{opaklık: 1;}
+
+.boton1{
+	dolgu:10 piksel;
+	yazı tipi boyutu:18 piksel;
+	yazı tipi ailesi:Roboto;
+	imleç:işaretçi;
+	geçiş:arka plan rengi 0,2 sn kolaylık;
+	renk:#000000;
+	arka plan rengi:#FFFFFF;
+}
+.boton1:hover{arka plan rengi:#e1e1e1;}
+.somb{kutu-gölge: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.tit_card{font-size:18px;margin:5px;color:#F5F5F5;}
+.subtit_card{font-size:14px;margin:5px;color:#E0E0E0;}
+.fecha_card{font-size:14px;margin:5px;color:#BDBDBD;}
+
+.tprodimgs{width:500px;}
+.tprodflecha{sol:462px;}
+.mySlidesProd{maks-genişlik:490px;}
+.divmapa{width:500px;}
+.videoprod{width:500px;height:375px;}
+@media all ve (maksimum genişlik: 500 piksel)
+{
+	.tprodimgs{width:250px;}
+	.tprodflecha{sol:212px;}
+	.mySlidesProd{max-width:240px;}
+	.divmapa{width:250px;}
+	.videoprod{width:250px;height:188px;}
+}
+
+
+
+.modal {
+    görüntü yok;
+    pozisyon: sabit;
+    z-endeksi: 999;
+    sol: 0;
+    üst: 0;
+    genişlik: %100;
+    yükseklik: %100;
+    taşma: otomatik;
+    arka plan rengi: rgb(0,0,0);
+    arka plan rengi: rgba(0,0,0,0.4);
+}
+
+.modal-içerik {
+    arka plan rengi: #fefefe;
+    marj: %15 otomatik;
+    dolgu: 20 piksel;
+    kenarlık: 1 piksel katı #888;
+    genişlik: %80;
+    maksimum genişlik:600 piksel;
+}
+
+.kapat {
+    renk: #aaa;
+    Sağa çık;
+    yazı tipi boyutu: 28 piksel;
+    yazı tipi ağırlığı: kalın;
+}
+
+.kapat: fareyle üzerine gelin,
+.close:odak {
+    siyah renk;
+    metin-dekorasyon: yok;
+    imleç: işaretçi;
+}
+
+
+	* {
+	    kutu boyutlandırma: kenarlık kutusu;
+	}
+
+	.row-ızgara:sonra {
+	    içerik: "";
+	    ikisini de temizle;
+	    Ekran bloğu;
+	}
+
+	[class*="col-"] {
+	    yüzer: sol;
+	    dolgu: 15 piksel;
+	    genişlik: %100;
+	}
+	@media yalnızca ekran ve (min-width: 791px) {
+	    .col-2 {genişlik: %50;}
+	    .col-3 {genişlik: %33,33;}
+	    .col-4 {genişlik: %25;}
+	    .col-5 {genişlik: %20;}
+	    .col-6 {genişlik: %16,66;}
+	    .col-7 {genişlik: %14.28;}
+	    .col-8 {genişlik: %12,5;}
+	}
+	
+		.centrado1{float:left;konum:göreli;sol:%50;}
+	.centrado2{float:left;konum:göreli;sol:-50%;}
+
+		@media yalnızca ekran ve (min-width: 791px) {
+	    .col-22 {genişlik: otomatik;}
+	}
+	
+	@media only screen ve (min-width: 1116px) {
+	    .col-33 {genişlik: otomatik;}
+	}
+	.hoverlight:hover{kutu-gölge: iç metin 0 0 100px 100px rgba(255, 255, 255, 0.2);}
+	.av_cr{color:#666666;font-size:12px!important;position:relative;top:-1px;imleç:pointer;}
+	.av_ci{color:#CC0000;font-size:9px!important;position:relative;top:-2px;}
+	@media all ve (min-width: 791px)
+	{
+		#tcab{yükseklik:80px;}
+		#tcab_td_aux{yükseklik:80px;}
+		#imgcab{max-height:76px;} #lema{font-weight:bold;font-size:24px;} .icotop_2{font-size:14px;position:absolute;top:12px;right:108px;}
+		.icotop_22{font-size:14px;position:absolute;top:12px;sağ:5px;}
+		.tdicotop{padding:15px;font-size:24px;color:#;}
+		#avisos{position:absolute;top:40px;sağ:5px;z-index:99;display:none;}
+		
+					#tcab_aux{görüntüleme:yok;}
+					#btnatras{ekran:yok;}
+					#btnslide{ekran:yok;}
+			}
+
+	@media all ve (maksimum genişlik: 790 piksel)
+	{
+		#tcab{yükseklik:40px;}
+		#tcab_td_aux{yükseklik:40px;}
+		#imgcab{max-height:36px;} #lema{font-weight:bold;font-size:12px;} .icotop_2{font-size:10px;position:absolute;top:2px;right:73px;}
+		.icotop_22{font-size:10px;position:absolute;top:2px;sağ:5px;}
+		.tdicotop{padding:10px;font-size:15px;color:#;}
+		#avisos{position:absolute;top:35px;sağ:5px;z-index:99;display:none;}
+
+					#tcab_aux{görüntüleme:yok;}
+					#btnatras{ekran:yok;}
+					#btnslide{ekran:yok;}
+			}
+
+</style>
+<script src="https://www.socialcreator.com/jquery-1.11.3.min.js"></script>
+<script src="https://www.socialcreator.com/dom/js_getCookie.js"></script>
+<script dili="javascript">
+
+$(belge).hazır(işlev(){
+	$(belge).click(function() {
+	    $("#avisos").hide();
+	});
+});
+
+function fcaddia(d_str,idaviso)
+{
+	var d_aux = new Date(2000+parseInt(d_str.substr(4,2)),parseInt(d_str.substr(2,2))-1,parseInt(d_str.substr(0,2)),parseInt(d_str. substr(6,2)),parseInt(d_str.substr(8,2)));
+	d_aux.setMinutes(d_aux.getMinutes() - d_aux.getTimezoneOffset());
+	var d_aux_3=yeni Tarih(d_aux);
+	d_aux_3.setHours(0,0,0,0);
+
+	var cad_dia="";
+	var bugün=yeni Tarih();
+	bugün.setHours(0,0,0,0);
+	var dün=yeni Tarih(bugün);
+	dün.setTarihi(yesterday.getDate()-1)
+	if(d_aux_3.getTime()==bugün.getTime()){cad_dia="Bugün";}
+	else if(d_aux_3.getTime()==yesterday.getTime()){cad_dia="Dün";}
+	Başka
+	{
+		var dia_aux=d_aux_3.getDate();if(dia_aux<10){dia_aux="0"+dia_aux;};
+		var mes_aux=d_aux_3.getMonth()+1;if(mes_aux<10){mes_aux="0"+mes_aux;};
+					cad_dia=dia_aux+"-"+mes_aux+"-"+d_aux_3.getFullYear();
+			};
+	var h_aux=d_aux.getHours();if(h_aux<10){h_aux="0"+h_aux;};
+	var mi_aux=d_aux.getMinutes();if(mi_aux<10){mi_aux="0"+mi_aux;};
+	cad_dia+=" "+h_aux+":"+mi_aux;
+
+	$(".fh"+idaviso).html(cad_dia);
+};
+
+işlev fvisto(id)
+{
+	$(".av_ci"+id).hide();
+	$(".av_cr"+id).hide();
+	var n_aux=$("#av_nnuevos").html()-1;
+	if(n_aux==0){$("#av_nnuevos").hide();}
+	else{$("#av_nnuevos").html(n_aux);};
+    $.ajax({
+      yazın: "GET",
+      url: "https://www.socialcreator.com/dom/aviso_leido.php?idusu=16225242",
+      veri: "avle="+id
+     });
+}
+
+fonksiyon hatası(cad)
+{
+	document.getElementById("modaltxt").innerHTML=cad;
+	document.getElementById('divmodal').style.display="block";
+}
+fonksiyon fconfirm(cad,f,p)
+{
+	document.getElementById("modaltxtconfirm").innerHTML=cad;
+	$("#btnmodalok").prop('onclick',null).off('tık'); $("#btnmodalok").click(function() {
+		$('#divmodalconfirm').hide();
+				if(f.indexOf('@')!=-1)
+		{
+			f=f.split("@");
+			if(f.length==3){self.frames[f[0]][f[1]][f[2]](p);}
+			else if(f.length==2){self.frames[f[0]][f[1]](p);};
+		}
+		Başka
+		{
+    		pencere[f](p);
+    	};
+  	});
+	document.getElementById('divmodalconfirm').style.display="block";
+}
+
+
+jQuery(işlev( $)
+{
+			falert("<table style='border:0px;'><tr><td style='width:52px;'><img src='https://www.socialcreator.com/srv/imgs/gen/54269_ico .png' style='border:0px;max-width:50px;max-height:50px;'></td>"+
+		"<td style='font-weight:bold;'>Kısayol oluşturun</td></tr><tr><td colspan='2'><p>Daha hızlı erişmek için masaüstünüzde bir kısayol oluşturun.< br><br>Tarayıcınızda bu sayfayı ana ekranınıza ekleme seçeneğini seçin.</p></td></tr></table>");
+	
+	});
+</script>
+
+
+</head>
+<body>
+	<table id="tcab_aux">
+	<tr>
+	<td id="tcab_td_aux"></td>
+	</tr>
+	</tablo>
+	<table id="tcab" style="background-color:#333366;background:linear-gradient(#333366,#000000);width:100%;z-index:101;border-bottom:1px solid #BDBDBD; "> <tr>
+					<td style="padding:0;"><table style="border:0px;width:auto;" colspacing="0" hizalama="merkez">
+		<tr>
+					<td><a href="https://www.socialcreator.com/appmodbuilder"><img id="imgcab" style="border:0px;" alt="Uygulama Modu Oluşturucu logosu" src="https://www.socialcreator.com/srv/imgs/gen/54269_ico.png"></a></td>
+							<td id="lema" style="padding:5px;color:#FFFFFF;">------ AppModBuilder ------- Merhaba, Modlu Uygulama Merkezine Hoş Geldiniz</td>
+				</tr>
+		</table></td>
+				<td style="color:#FFFFFF;" hizala="sağ">
+				<table style="border:0px">
+		<tr>
+					<td class="hoverlight tdicotop" style="imleç:işaretçi;" onclick="$('#avisos').toggle();event.stopPropagation();"><i class='fa fa-bell'></i></td>
+				</tr>
+		</tablo>
+
+			   		<div id="avisos" class="w3-dropdown-content w3-border" style="z-index:99;">
+			<table style="border:0;width:100%;">
+			<tr>
+			<td align="right" onClick="$('#avisos').hide();event.stopPropagation();">
+			<i class="fa fa-times" style="cursor:pointer;margin:5px;"></i>
+			</td>
+						</tr>
+			<tr><td style="height:1px;background-color:#CCCCCC;padding:0;"></td></tr>
+			</tablo>
+
+			
+	   			   		    <span class="w3-padding">Haber yok</span>
+	   			    	</div>
+	    				</td>
+		</tr>
+	</tablo>
+
+
+
+
+<div id="divmodal" class="modal" style="display:none;" onclick="this.style.display='none';">
+  <div id="divmodalcontent" class="modal-content">
+    <span class="close">×</span>
+    <p id="modaltxt"></p>
+  </div>
+</div>
+<div id="divmodalconfirm" class="modal" style="display:none;">
+  <div class="modal-içerik">
+    <p id="modaltxtonayla"></p>
+    <button class="w3-btn w3-small w3-blue-grey" id="btnmodalok">Tamam</button>
+    <button class="w3-btn w3-small w3-açık-gri" style="margin-left:10px;" onclick="$('#divmodalconfirm').hide();">İptal</button>
+  </div>
+</div>
+
+
+
+
+<div class="row-grid"> <div class="col-1">
+	    
+	    	        <table style="border:0;background-color:#616161;background:linear-gradient(#616161,#757575);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" hizala="merkez">
+	        <tr><td>
+	    	    
+		<a href="https://www.socialcreator.com/appmodbuilder/?s=184334"><div align="center">
+		
+		    			<img src="https://www.socialcreator.com/srv/imgs/seccs/184334_ico.png?ts=1646427009" alt="SİTEYE GİRMEK İÇİN TIKLAYIN " style="max-width:100%;">
+					
+		</div></a>		
+				
+	    </td></tr>
+	    </tablo>
+	</div>
+	</div><br><br><br><br>
+
+
+
+</body>
+</html>
